@@ -1,0 +1,78 @@
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--bg);
+	padding: 0.25rem 2rem 0 2rem;
+
+	> p {
+		font-size: 1vw;
+		font-family: 'Neue';
+		font-weight: 400;
+		color: white;
+		margin: 1rem 0.35rem;
+	}
+
+	> .time {
+		width: fit-content;
+		padding: 0.5rem 0.85rem;
+		border: 1px solid var(--border);
+		border-radius: 10rem;
+
+		> p {
+			font-size: 0.75vw;
+			font-family: 'Neue';
+			font-weight: 400;
+			color: white;
+		}
+	}
+
+	> .contact {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		> p:nth-child(1) {
+			font-size: 1vw;
+			font-family: 'Neue';
+			font-weight: 400;
+			color: white;
+		}
+
+		> svg {
+			font-size: 1.5vw;
+			color: white;
+			cursor: pointer;
+			transition: 0.3s;
+			margin: 0 0.4rem;
+		}
+
+		p:nth-child(3) {
+			font-size: 1vw;
+			font-family: 'Neue';
+			font-weight: 400;
+			color: var(--border);
+			position: relative;
+			transition: all 0.5s ease-in-out;
+
+			&:hover {
+				color: white;
+
+				&::after {
+					width: 100%;
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				bottom: -5px;
+				width: 0%;
+				height: 1px;
+				background-color: var(--border);
+				transition: all 0.5s;
+			}
+		}
+	}
+}

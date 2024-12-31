@@ -1,0 +1,117 @@
+.main {
+	display: flex;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(4.5px);
+	-webkit-backdrop-filter: blur(4.5px);
+	border-radius: 10px;
+	min-height: 8vh;
+	height: 8vh;
+	position: fixed;
+	width: 95%;
+	z-index: 1000;
+	bottom: -2rem;
+	opacity: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 1rem;
+	overflow: hidden;
+	transition: all 0.3s ease;
+
+	> .progressBar {
+		background-color: #202020;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+	}
+
+	> .copyright {
+		padding: 1rem 0 1rem 5rem;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		width: 25%;
+
+		> p {
+			color: white;
+			font-size: 1vw;
+			font-family: 'Neue', sans-serif;
+			font-weight: 400;
+			letter-spacing: 0.1rem;
+		}
+	}
+
+	> .divs {
+		width: 75%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 0 3rem 0 0;
+		gap: 5rem;
+
+		> div {
+			all: unset;
+			color: #ffffffe0;
+			font-size: 0.9vw;
+			font-family: 'Neue', sans-serif;
+			font-weight: 300;
+			letter-spacing: 0.1rem;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+	}
+
+	> .contactButton {
+		border: 1px solid #ffffff47;
+		padding: 1rem 3rem;
+		border-radius: 10rem;
+		transition: all 0.2s ease-in-out;
+		margin: 0 1rem 0 0;
+		position: relative;
+
+		> p {
+			font-size: 0.9rem;
+			color: var(--accent);
+			font-family: 'Neue';
+			font-weight: 600;
+			letter-spacing: 0.1rem;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+
+		@keyframes marqee {
+			0% {
+				transform: translateY(0);
+			}
+			100% {
+				transform: translateY(-100%);
+			}
+		}
+
+		> span {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: 0.3s;
+			width: 100%;
+			display: block;
+			background-color: white;
+		}
+
+		&:hover {
+			cursor: pointer;
+			border: 1px solid #ffffff;
+
+			> p {
+				opacity: 0;
+			}
+
+			> span {
+				animation: marqee 2s linear;
+			}
+		}
+	}
+}

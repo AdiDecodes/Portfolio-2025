@@ -1,0 +1,221 @@
+* {
+	font-family: 'Neue';
+}
+
+.main {
+	width: 100%;
+	background-color: var(--bg);
+	padding: 5rem 0 5rem 0;
+
+	> .heading {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		margin: 0 0 1rem 0;
+
+		h2 {
+			font-size: 20vw;
+			font-weight: 400;
+			color: white;
+			line-height: 90%;
+		}
+
+		p {
+			width: 100%;
+			font-size: 0.85vw;
+			font-weight: 400;
+			color: #ffffff49;
+			line-height: 90%;
+			letter-spacing: 0.2rem;
+			text-align: right;
+			padding: 0 10rem;
+			text-transform: uppercase;
+		}
+	}
+
+	> .courseWrapper {
+		height: auto;
+		width: 100%;
+		padding: 0.75rem 5rem;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 3rem;
+
+		> .course {
+			width: 40%;
+
+			> .imageWrapper {
+				border-radius: 1rem;
+				width: 100%;
+				overflow: hidden;
+				position: relative;
+
+				> img {
+					width: 100%;
+				}
+
+				> .flashTag {
+					position: absolute;
+					top: 1rem;
+					right: 1rem;
+					padding: 0.5rem 1rem;
+					background-color: rgba(0, 0, 0, 0.362);
+
+					> p {
+						color: white;
+					}
+				}
+			}
+
+			> .tagsWrapper {
+				width: 100%;
+				padding: 1rem 0 0 0;
+				display: flex;
+				justify-content: flex-start;
+				gap: 1rem;
+
+				> .tag {
+					padding: 0.5rem 1.25rem;
+					border-radius: 10rem;
+					border: 1px solid var(--border);
+
+					> p {
+						color: white;
+					}
+				}
+			}
+
+			> .titleWrapper {
+				padding: 0.5rem 0 0rem 0;
+				text-overflow: ellipsis;
+				overflow: hidden;
+
+				h2 {
+					font-size: 3rem;
+					color: white;
+					font-weight: 500;
+					font-family: 'Chillax', sans-serif;
+					display: -webkit-box;
+					line-clamp: 3;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				p {
+					margin: 0.25rem 0 0 0;
+					font-size: 1.2rem;
+					color: #ffffff7c;
+					font-weight: 300;
+					letter-spacing: 0.15rem;
+					display: -webkit-box;
+					line-clamp: 3;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					text-overflow: ellipsis;
+
+					&:nth-child(2) {
+						font-size: 0.85rem;
+						color: #ffffffe5;
+						margin: 0 0 0.5rem 0;
+					}
+				}
+			}
+
+			> .buyButton {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1.5rem;
+
+				> p {
+					color: white;
+					font-size: 1.25rem;
+					font-family: 'Chillax', sans-serif;
+				}
+
+				> .arrowContainer {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 1rem;
+					padding: 1rem;
+					transition: all 0.2s ease-in-out;
+
+					> P {
+						color: white;
+						font-size: 1rem;
+						transition: all 0.2s ease-in-out;
+					}
+
+					> svg {
+						color: white;
+						font-size: 2rem;
+						transition: all 0.2s ease-in-out;
+					}
+
+					&:hover {
+						padding: 1rem;
+						background-color: white;
+						cursor: pointer;
+
+						> p {
+							color: var(--bg);
+						}
+
+						svg {
+							transform: rotate(-45deg);
+							color: var(--bg);
+						}
+					}
+				}
+			}
+		}
+
+		> .seeAll {
+			background-color: white;
+			border-radius: 10rem;
+			aspect-ratio: 1;
+			width: 10%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 1rem;
+			flex-direction: column;
+			border: 1px solid transparent;
+			transition: all 0.2s ease-in-out;
+
+			> p {
+				transition: all 0.2s ease-in-out;
+				font-size: 1.25rem;
+				text-align: center;
+			}
+
+			> svg {
+				transition: all 0.2s ease-in-out;
+				font-size: 2rem;
+			}
+
+			&:hover {
+				background-color: transparent;
+				border: 1px solid var(--border);
+				cursor: pointer;
+				transform: scale(1.05);
+
+				> p {
+					color: white;
+				}
+
+				> svg {
+					color: white;
+				}
+			}
+		}
+	}
+}

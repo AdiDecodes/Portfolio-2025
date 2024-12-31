@@ -1,0 +1,137 @@
+.main {
+	display: flex;
+	flex-direction: column;
+	padding: 0rem 5rem;
+	background-color: var(--bg);
+
+	> .titleWrapper {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		> h2 {
+			font-size: 17vw;
+			font-family: 'Neue';
+			font-weight: 400;
+			color: white;
+			line-height: 90%;
+		}
+
+		p {
+			width: 100%;
+			font-size: 0.85vw;
+			font-weight: 400;
+			font-family: 'Neue';
+			color: #ffffff64;
+			letter-spacing: 0.2rem;
+			text-align: left;
+			padding: 0 5rem;
+			margin: 0.5rem 0;
+		}
+	}
+
+	> .itemWrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin-top: 2rem;
+		padding: 2rem 5rem;
+		gap: 1rem;
+		cursor: none;
+
+		> .item {
+			width: 85%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			transition: all 0.2s ease-in-out;
+			height: 10vh;
+
+			> h6 {
+				font-family: 'Neue';
+				font-size: 2.5vw;
+				font-weight: 300;
+				color: white;
+				margin: 1rem;
+
+				.activeHeart {
+					margin: 0 0 0 0.5rem;
+					color: white;
+					font-size: 1.5rem;
+					vertical-align: middle;
+					opacity: 1;
+					transition: all 0.2s ease-in-out;
+				}
+
+				.inactiveHeart {
+					margin: 0 0 0 0.5rem;
+					color: white;
+					font-size: 1.5rem;
+					vertical-align: middle;
+					opacity: 0;
+					transition: all 0.2s ease-in-out;
+				}
+			}
+
+			> .icon {
+				transition: all 0.2s ease-in-out;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				aspect-ratio: 1;
+				border: 1px solid transparent;
+
+				> svg {
+					font-size: 3vw;
+					color: white;
+					transition: all 0.2s ease-in-out;
+				}
+
+				&:hover {
+					background-color: transparent;
+					border: 1px solid white;
+
+					> svg {
+						color: #ffffff;
+					}
+				}
+			}
+
+			&:hover {
+				background-color: rgb(30, 30, 30);
+
+				> .icon {
+					background-color: var(--accent);
+
+					> svg {
+						transform: rotate(-45deg);
+					}
+				}
+			}
+		}
+
+		// > .itemHover {
+		// 	> .icon {
+		// 		background-color: var(--accent);
+
+		// 		> svg {
+		// 			transform: rotate(-45deg);
+		// 		}
+		// 	}
+		// }
+	}
+	.imageHover {
+		position: absolute;
+		height: 10rem;
+		width: 10rem;
+		pointer-events: none;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+	}
+}
