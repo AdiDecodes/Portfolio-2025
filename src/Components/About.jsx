@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './Styles/About.module.scss';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import male from '../assets/male.jpg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

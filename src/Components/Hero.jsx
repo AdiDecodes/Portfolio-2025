@@ -94,53 +94,6 @@ const Hero = () => {
 
 	return (
 		<div className={styles.main}>
-			{/* <div className={styles.sectionOne}>
-				<div className={styles.text}>
-					<p>HELLO</p>
-					<span className={styles.blockWrapper}>
-						<span className={styles.block}></span>
-						<span className={styles.block}></span>
-						<span className={styles.block}></span>
-						<span className={styles.block}></span>
-						<span className={styles.block}></span>
-						<span className={styles.block}></span>
-						<span className={styles.block}></span>
-					</span>
-				</div>
-				<div className={styles.scroller}>
-					<div className={styles.linear}>
-						<span className={styles.loader}></span>
-					</div>
-					<GoNorthStar />
-					<div className={styles.linear}>
-						<span className={styles.loader}></span>
-					</div>
-				</div>
-				<div className={styles.info}>
-					<p>I'M</p>
-				</div>
-			</div>
-			<div className={styles.sectionTwo}>
-				<p>ADITYA</p>
-				<p>SINGH</p>
-			</div>
-			<div className={styles.sectionThree}>
-				<div className={styles.image}>
-					<img
-						src={side}
-						alt=''
-					/>
-				</div>
-				<div className={styles.textRight}>
-					<div className={styles.text}>
-						<p>FULL STACK</p>
-					</div>
-					<div className={styles.text}>
-						<p>DEVELOPER</p>
-					</div>
-				</div>
-			</div> */}
-
 			<div
 				className={styles.imageSection}
 				ref={imageref}

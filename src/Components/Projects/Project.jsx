@@ -8,9 +8,10 @@ import cleverstudio from '../../assets/Projects/cleverstudio.png';
 import peerbond from '../../assets/Projects/peerbond.png';
 import igloaded from '../../assets/Projects/igloaded.png';
 import vocalize from '../../assets/Projects/vocalize.png';
+import farzi from '../../assets/Projects/farzi-2.png';
 import { Link } from 'react-router-dom';
-import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
 
 const Project = () => {
 	const projects = [
@@ -20,16 +21,14 @@ const Project = () => {
 			description:
 				'A social media platform that connects you with your peers and helps you share your thoughts and ideas with them.',
 			image: peerbond,
-			url: 'https://techbucket.netlify.app/',
 			year: '2024',
 		},
 		{
-			id: 2,
+			id: 4,
 			name: 'TechBucket',
 			description:
 				'A tech blog that provides you with the latest tech news and reviews.',
 			image: techbucket,
-			url: 'https://techbucket.netlify.app/',
 			year: '2024',
 		},
 		{
@@ -38,16 +37,14 @@ const Project = () => {
 			description:
 				'A web development agency that provides you with the best web development services.',
 			image: cleverstudio,
-			url: 'https://cleverstudio.netlify.app/',
 			year: '2024',
 		},
 		{
-			id: 4,
+			id: 2,
 			name: 'IGLoaded',
 			description:
 				'A web app that helps you download Instagram photos and videos.',
 			image: igloaded,
-			url: 'https://igloaded.netlify.app/',
 			year: '2023',
 		},
 		{
@@ -56,7 +53,14 @@ const Project = () => {
 			description:
 				'Vocalize is a web based platform that supports realtime speech translation and captions for your meeting.',
 			image: vocalize,
-			url: '#',
+			year: '2024',
+		},
+		{
+			id: 6,
+			name: 'Farzi.js',
+			description:
+				'Farzi.js is a npm package that helps you generate fake data for your projects.',
+			image: farzi,
 			year: '2024',
 		},
 	];
@@ -155,25 +159,27 @@ const Project = () => {
 				</p>
 			</div>
 			<div className={styles.projectWrapper}>
-				{projects.map((project) => (
-					<div
-						key={project.id}
-						className={styles.project}
-					>
-						<div className={styles.imageWrapper}>
-							<img
-								src={project.image}
-								alt={project.name}
-							/>
+				{projects
+					.sort((a, b) => a.id - b.id)
+					.map((project) => (
+						<div
+							key={project.id}
+							className={styles.project}
+						>
+							<div className={styles.imageWrapper}>
+								<img
+									src={project.image}
+									alt={project.name}
+								/>
+							</div>
+							<div className={styles.bottom}>
+								<Link to={`/projects/${project.id}`}>
+									{project.name}
+								</Link>
+								<p>{project.year}</p>
+							</div>
 						</div>
-						<div className={styles.bottom}>
-							<Link to={`/projects/${project.id}`}>
-								{project.name}
-							</Link>
-							<p>{project.year}</p>
-						</div>
-					</div>
-				))}
+					))}
 			</div>
 		</div>
 	);

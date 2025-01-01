@@ -38,7 +38,7 @@
 	> .right {
 		width: 60%;
 		height: 100%;
-		padding: 1em 3rem;
+		padding: 0.5rem 3rem 1rem 3rem;
 		overflow-y: auto;
 
 		> .itemInline {
@@ -46,7 +46,7 @@
 			align-items: center;
 			justify-content: flex-start;
 
-			> .back{
+			> .back {
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -163,49 +163,53 @@
 			}
 		}
 
-		> .dateTimeline {
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-top: 2rem;
+.dateTimeline {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 
-			> .date {
-				padding: 1rem 2rem;
-				border: 1px solid rgba(255, 255, 255, 0.163);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				border-radius: 1rem;
+  > .date {
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.163);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
 
-				> p {
-					font-size: 1rem;
-					color: #ffffff;
-					font-weight: 300;
-					white-space: nowrap;
-				}
-			}
+    > p {
+      font-size: 1rem;
+      color: #ffffff;
+      font-weight: 300;
+      white-space: nowrap;
+    }
+  }
 
-			.line {
-				width: 100%;
-				height: 1px;
-				position: relative;
-				background: repeating-linear-gradient(
-						90deg,
-						#ffffff78 0 5px,
-						/* Dash size */ transparent 0 10px
-							/* Space between dashes */
-					)
-					left/calc(100% * 2) 100%; /* Extend the background to avoid visible gaps */
-				animation: dash 2s linear infinite; /* Smooth continuous animation */
-			}
+  .line {
+    width: 100%;
+    height: 1px;
+    position: relative;
+    background: repeating-linear-gradient(
+      90deg,
+      #ffffff78 0 5px, /* Dash size */
+      transparent 0 10px /* Space between dashes */
+    );
+    background-size: 20px 100%; /* Set a smaller size for dashes to move smoothly */
+    animation: dash 5s linear infinite; /* Continuous animation */
+  }
 
-			@keyframes dash {
-				100% {
-					background-position: calc(-100% * 2) 0; /* Move the background smoothly to the right */
-				}
-			}
-		}
+  @keyframes dash {
+    0% {
+      background-position: 0 0; /* Start at the left */
+    }
+    100% {
+      background-position: 200px 0; /* Move to the left by the background size */
+    }
+  }
+}
+
+
 
 		> .urlWrapper {
 			width: 100%;
@@ -222,7 +226,7 @@
 				justify-content: center;
 				transition: all 0.3s ease;
 				height: fit-content;
-				
+
 				> p {
 					font-size: 5.2rem;
 					letter-spacing: 0.075rem;

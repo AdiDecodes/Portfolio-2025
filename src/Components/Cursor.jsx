@@ -17,10 +17,12 @@ const CustomCursor = () => {
 	const hideCursor = () => {
 		gsap.to(cursorRef.current, {
 			opacity: 0,
+			scale: 0,
 			duration: 0.2,
 		});
 		gsap.to(followerRef.current, {
 			opacity: 0,
+			scale: 0,
 			duration: 0.2,
 		});
 	};
@@ -28,10 +30,12 @@ const CustomCursor = () => {
 	const showCursor = () => {
 		gsap.to(cursorRef.current, {
 			opacity: 1,
+			scale: 1,
 			duration: 0.2,
 		});
 		gsap.to(followerRef.current, {
 			opacity: 1,
+			scale: 1,
 			duration: 0.2,
 		});
 	};

@@ -9,7 +9,6 @@ import {
 	useParams,
 	useNavigate,
 } from 'react-router-dom';
-import { BiLinkExternal } from 'react-icons/bi';
 import {
 	FaGithub,
 	FaInstagram,
@@ -38,6 +37,11 @@ import { FaHtml5 } from 'react-icons/fa';
 import { FaCss3 } from 'react-icons/fa';
 import { SiMailgun } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
+import { BsRobot } from 'react-icons/bs';
+import { SiWebrtc } from 'react-icons/si';
+import { FaNpm } from 'react-icons/fa';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Postdetails = () => {
 	const { id } = useParams();
@@ -52,8 +56,6 @@ const Postdetails = () => {
 				(project) => project.id === parseInt(id)
 			);
 			setProject(project);
-			console.log(project);
-			// setProject(project);
 		}
 	}, []);
 
@@ -87,6 +89,9 @@ const Postdetails = () => {
 		css: <FaCss3 color='#1572B6' />, // CSS3 blue
 		mailgun: <SiMailgun color='#EA4C89' />, // Mailgun pink
 		api: <TbApi color='#646CFF' />, // API purple
+		machinelearning: <BsRobot color='#ffffff' />, // Robot black
+		webrtc: <SiWebrtc color='#505fff' />, // WebRTC black
+		npm: <FaNpm color='#CB3837' />, // NPM red
 	};
 
 	const handleIconMapping = (tech) => {
@@ -94,7 +99,6 @@ const Postdetails = () => {
 			.toLowerCase()
 			.replace(' ', '')
 			.replace('.', '');
-		console.log(iconName);
 		for (const key in iconsMapping) {
 			if (
 				key == iconName ||
@@ -105,11 +109,74 @@ const Postdetails = () => {
 		}
 	};
 
+	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		// Select the left and right wrappers
+		const leftWrapper = document.querySelector(
+			`.${styles.left}`
+		);
+		const rightWrapper = document.querySelector(
+			`.${styles.right}`
+		);
+
+		if (leftWrapper && rightWrapper) {
+			// Animate the left images
+			const leftTimeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: leftWrapper,
+					start: 'top 80%', // Start animation when the top of `.left` reaches 80% of viewport
+					end: 'bottom 20%', // End animation when the bottom of `.left` reaches 20% of viewport
+					scrub: false, // Play the animation once, without scrub
+					// markers: true, // Debug markers (remove in production)
+				},
+			});
+
+			leftTimeline.fromTo(
+				leftWrapper.children, // Target all image containers inside `.left`
+				{ opacity: 0, x: -50 }, // Initial state: hidden and slid to the left
+				{
+					opacity: 1,
+					x: 0,
+					stagger: 0.3,
+					duration: 1,
+					ease: 'power3.out',
+				} // Final state: visible and in place
+			);
+
+			// Animate the right text
+			const rightTimeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: rightWrapper,
+					start: 'top 80%', // Start animation when the top of `.right` reaches 80% of viewport
+					end: 'bottom 20%', // End animation when the bottom of `.right` reaches 20% of viewport
+					scrub: false, // Play the animation once, without scrub
+					// markers: true, // Debug markers (remove in production)
+				},
+			});
+
+			rightTimeline.fromTo(
+				rightWrapper.children, // Target all text elements inside `.right`
+				{ opacity: 0, y: 20 }, // Initial state: hidden and moved slightly down
+				{
+					opacity: 1,
+					y: 0,
+					stagger: 0.3,
+					duration: 1,
+					ease: 'power3.out',
+				} // Final state: visible and in place
+			);
+		}
+	}, []);
+
 	return (
 		<div className={styles.main}>
 			<div className={styles.left}>
-				{project?.image.map((image) => (
-					<div className={styles.imageWrapper}>
+				{project?.image.map((image, index) => (
+					<div
+						key={index}
+						className={styles.imageWrapper}
+					>
 						<img
 							src={image}
 							alt='project'

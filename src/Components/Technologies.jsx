@@ -113,7 +113,6 @@ const Technologies = () => {
 		const aboutMeText = document.querySelector(
 			`.${styles.titleWrapper} h2`
 		);
-		console.log(aboutMeText);
 		const letters = aboutMeText.innerText.split(''); // Split the text into letters
 		aboutMeText.innerHTML = letters
 			.map((letter) => `<span>${letter}</span>`)

@@ -6,14 +6,19 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Routes,
-	useNavigationType,
+	useLocation,
 } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AnimatePresence } from 'framer-motion';
+
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
 import Notfound from './Pages/Notfound';
-import { Toaster } from 'react-hot-toast';
 import Preloader from './Components/Preloader/Preloader';
 import Postdetails from './Components/ProjectDetails/Postdetails';
+import Transition from './Components/Transition';
+import ScrollToTop from './Components/ScrollToTop';
+
 import './index.css';
 
 const AppRoutes = () => {
@@ -21,7 +26,6 @@ const AppRoutes = () => {
 		useState(true);
 
 	useEffect(() => {
-		// Check if the page is loaded directly
 		const navigationType =
 			window.performance.getEntriesByType(
 				'navigation'
@@ -32,10 +36,10 @@ const AppRoutes = () => {
 			navigationType === 'navigate'
 		) {
 			setShowPreloader(true);
-			const timer = setTimeout(() => {
-				setShowPreloader(false);
-			}, 2000);
-
+			const timer = setTimeout(
+				() => setShowPreloader(false),
+				2000
+			);
 			return () => clearTimeout(timer);
 		}
 	}, []);
@@ -43,31 +47,65 @@ const AppRoutes = () => {
 	return (
 		<>
 			<Toaster />
-			{showPreloader ? (
-				<Preloader />
-			) : (
-				<Router>
-					<Routes>
-						<Route
-							path='/'
-							element={<Home />}
-						/>
-						<Route
-							path='/contact'
-							element={<Contact />}
-						/>
-						<Route
-							path='/projects/:id'
-							element={<Postdetails />}
-						/>
-						<Route
-							path='*'
-							element={<Notfound />}
-						/>
-					</Routes>
-				</Router>
-			)}
+			<AnimatePresence mode='wait'>
+				{showPreloader ? (
+					<Transition key='preloader'>
+						<Preloader />
+					</Transition>
+				) : (
+					<Router>
+						<ScrollToTop />
+						<AnimatedRoutes />
+					</Router>
+				)}
+			</AnimatePresence>
 		</>
+	);
+};
+
+const AnimatedRoutes = () => {
+	const location = useLocation();
+
+	return (
+		<AnimatePresence mode='wait'>
+			<Routes
+				location={location}
+				key={location.pathname}
+			>
+				<Route
+					path='/'
+					element={
+						<Transition>
+							<Home />
+						</Transition>
+					}
+				/>
+				<Route
+					path='/contact'
+					element={
+						<Transition>
+							<Contact />
+						</Transition>
+					}
+				/>
+				<Route
+					path='/projects/:id'
+					element={
+						<Transition>
+							<Postdetails />
+						</Transition>
+					}
+				/>
+				<Route
+					path='*'
+					element={
+						<Transition>
+							<Notfound />
+						</Transition>
+					}
+				/>
+			</Routes>
+		</AnimatePresence>
 	);
 };
 
