@@ -163,53 +163,52 @@
 			}
 		}
 
-.dateTimeline {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
+		.dateTimeline {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: 2rem;
 
-  > .date {
-    padding: 1rem 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.163);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1rem;
+			> .date {
+				padding: 1rem 2rem;
+				border: 1px solid rgba(255, 255, 255, 0.163);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 1rem;
 
-    > p {
-      font-size: 1rem;
-      color: #ffffff;
-      font-weight: 300;
-      white-space: nowrap;
-    }
-  }
+				> p {
+					font-size: 1rem;
+					color: #ffffff;
+					font-weight: 300;
+					white-space: nowrap;
+				}
+			}
 
-  .line {
-    width: 100%;
-    height: 1px;
-    position: relative;
-    background: repeating-linear-gradient(
-      90deg,
-      #ffffff78 0 5px, /* Dash size */
-      transparent 0 10px /* Space between dashes */
-    );
-    background-size: 20px 100%; /* Set a smaller size for dashes to move smoothly */
-    animation: dash 5s linear infinite; /* Continuous animation */
-  }
+			.line {
+				width: 100%;
+				height: 1px;
+				position: relative;
+				background: repeating-linear-gradient(
+					90deg,
+					#ffffff78 0 5px,
+					/* Dash size */ transparent 0 10px
+						/* Space between dashes */
+				);
+				background-size: 20px 100%; /* Set a smaller size for dashes to move smoothly */
+				animation: dash 5s linear infinite; /* Continuous animation */
+			}
 
-  @keyframes dash {
-    0% {
-      background-position: 0 0; /* Start at the left */
-    }
-    100% {
-      background-position: 200px 0; /* Move to the left by the background size */
-    }
-  }
-}
-
-
+			@keyframes dash {
+				0% {
+					background-position: 0 0; /* Start at the left */
+				}
+				100% {
+					background-position: 200px 0; /* Move to the left by the background size */
+				}
+			}
+		}
 
 		> .urlWrapper {
 			width: 100%;
@@ -241,6 +240,108 @@
 
 					> p {
 						color: #ffffff;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.main {
+		flex-direction: column;
+		padding: 0.5rem;
+
+		.left {
+			width: 100%;
+			height: auto;
+			flex-direction: row;
+			padding: 2rem 1rem;
+
+			.imageWrapper {
+				width: 100%;
+				box-shadow: 0px 0px 10px 0px
+					rgba(0, 0, 0, 0.75);
+				overflow: hidden;
+				border-radius: 1rem;
+				flex-shrink: 0;
+				aspect-ratio: 16/9;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+
+		.right {
+			width: 100%;
+			height: 100%;
+			padding: 0.5rem 1rem;
+
+			.itemInline {
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+
+				.back {
+					margin-right: 0;
+					padding: .5rem;
+				}
+
+				h2 {
+					font-size: 2rem;
+				}
+			}
+
+			p {
+				font-size: 1rem;
+			}
+
+			.item {
+				h3 {
+					font-size: 1.25rem;
+				}
+
+				p {
+					font-size: 1rem;
+				}
+			}
+
+			.techStack {
+				h3 {
+					font-size: 1.25rem;
+				}
+
+				.techStackWrapper {
+					.tech {
+						padding: 0.75rem 1.5rem;
+
+						p {
+							font-size: 1rem;
+						}
+
+						svg {
+							font-size: 1.5rem;
+						}
+					}
+				}
+			}
+
+			.urlWrapper {
+				flex-direction: row;
+				align-items: flex-start;
+				flex-wrap: wrap;
+				gap: 1.5rem;
+
+				.url {
+					p {
+						font-size: 3rem;
 					}
 				}
 			}

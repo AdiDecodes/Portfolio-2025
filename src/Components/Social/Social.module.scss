@@ -99,44 +99,46 @@
 				}
 			}
 		}
+	}
+}
 
-		> .overlay {
-			height: 100%;
-			width: 100%;
-			position: absolute;
-			background-color: transparent;
-			pointer-events: none;
 
-			> img {
-				opacity: 0;
-				position: absolute;
-				height: 8vw;
-				border: 1px solid #ffffff2a;
+@media (max-width: 768px) {
+	.main {
+		padding: 3rem 0;
 
-				&:nth-child(1) {
-					transform: rotate(-10deg) scale(1.5);
-					top: 50%;
-					left: 7rem;
+		> .heading {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			h2 {
+				font-size: 18vw;
+			}
+
+			> .smallInfo {
+				margin: 1rem 0 0 0;
+
+				p {
+					font-size: 3.5vw;
 				}
 
-				&:nth-child(2) {
-					transform: rotate(10deg) scale(1.5);
-					top: 50%;
-					right: 7rem;
+				> svg {
+					font-size: 4vw;
 				}
+			}
+		}
 
-				&:nth-child(3) {
-					transform: rotate(10deg) scale(1.5);
-					top: 10%;
-					z-index: 1;
-					left: 20rem;
-				}
+		> .socialWrapper {
+			padding: 0.5rem;
+			gap: 1rem;
 
-				&:nth-child(4) {
-					transform: rotate(-10deg) scale(1.5);
-					top: 10%;
-					z-index: 1;
-					right: 20rem;
+			> .socialItem {
+				padding: 0.5rem;
+
+				> p {
+					font-size: 8vw;
+					line-height: 100%;
 				}
 			}
 		}

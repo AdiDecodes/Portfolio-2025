@@ -58,3 +58,13 @@
 	transform: scale(2);
 	transition: transform 0.2s ease-in-out;
 }
+
+
+@media (max-width: 1068px) {
+	.custom-cursor {
+		display: none;
+	}
+	.cursor-follower {
+		display: none;
+	}
+}

@@ -251,15 +251,6 @@ const Social = () => {
 						</div>
 					);
 				})}
-				<div
-					className={styles.overlay}
-					ref={overLayRef}
-				>
-					<img alt='' />
-					<img alt='' />
-					<img alt='' />
-					<img alt='' />
-				</div>
 			</div>
 		</div>
 	);

@@ -273,3 +273,101 @@
 		}
 	}
 }
+
+
+@media (max-width: 768px) {
+	.main {
+		padding: 3rem 0;
+
+		> .heading {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			h2 {
+				font-size: 15vw;
+			}
+
+			> .smallInfo {
+				margin: 1rem 0 0 0;
+
+				p {
+					font-size: 4vw;
+				}
+
+				> svg {
+					font-size: 3vw;
+				}
+			}
+		}
+
+		> .contactWrapper {
+			flex-direction: column;
+			min-height: auto;
+			width: 90%;
+			padding: 1rem;
+			margin: 0 0 2rem 0;
+
+			> .itemWrapper {
+				width: 100%;
+				margin: 0;
+
+				> .item {
+					padding: 1rem 1.5rem;
+					min-height: auto;
+					gap: .5rem;
+
+					> p {
+						font-size: 5vw;
+					}
+
+					> .tags {
+						padding: 1rem 0 0 0;
+						gap: .5rem;
+
+						> .tag {
+							font-size: 3.5vw;
+						}
+					}
+
+					> input {
+						font-size: 4.5vw;
+						margin: 0;
+					}
+				}
+
+				> .buttonSubmit {
+					padding: 1rem 2rem;
+					width: calc(100% - 3rem);
+					margin-bottom: 2rem;
+
+					.loader {
+						width: 30px;
+					}
+
+					> p {
+						font-size: 5vw;
+					}
+
+					> svg {
+						font-size: 5vw;
+					}
+				}
+			}
+		}
+
+		> .infoSection {
+			margin: 0rem 0;
+
+			p {
+				font-size: 4.5vw;
+			}
+
+			> .heartIcon {
+				svg {
+					font-size: 3vw;
+				}
+			}
+		}
+	}
+}

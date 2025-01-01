@@ -167,6 +167,13 @@ const Technologies = () => {
 		);
 	}, []);
 
+	const getDeviceType = () => {
+		const width = window.innerWidth;
+		if (width > 1200) return 'desktop';
+		if (width > 768) return 'tablet';
+		return 'mobile';
+	};
+
 	return (
 		<div className={styles.main}>
 			<div className={styles.titleWrapper}>
@@ -181,9 +188,12 @@ const Technologies = () => {
 						key={technology.id}
 						data-hide-cursor='true'
 						onMouseEnter={() => {
-							setModal({ active: true, index });
+							if (getDeviceType() === 'desktop') {
+								setModal({ active: true, index });
+							}
 						}}
 						onMouseLeave={() => {
+							
 							setModal({ active: false, index });
 						}}
 						className={
@@ -191,6 +201,14 @@ const Technologies = () => {
 								? `${styles.item}`
 								: `${styles.item} ${styles.itemHover}`
 						}
+						onFocus={(e) => {
+							if (
+								getDeviceType() === 'mobile' ||
+								getDeviceType() === 'tablet'
+							) {
+								e.preventDefault();
+							}
+						}}
 					>
 						<h6>
 							{technology.name}{' '}

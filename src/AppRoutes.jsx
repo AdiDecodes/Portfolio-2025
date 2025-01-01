@@ -12,7 +12,6 @@ import { Toaster } from 'react-hot-toast';
 import { AnimatePresence } from 'framer-motion';
 
 import Home from './Pages/Home';
-import Contact from './Pages/Contact';
 import Notfound from './Pages/Notfound';
 import Preloader from './Components/Preloader/Preloader';
 import Postdetails from './Components/ProjectDetails/Postdetails';
@@ -77,14 +76,6 @@ const AnimatedRoutes = () => {
 					element={
 						<Transition>
 							<Home />
-						</Transition>
-					}
-				/>
-				<Route
-					path='/contact'
-					element={
-						<Transition>
-							<Contact />
 						</Transition>
 					}
 				/>

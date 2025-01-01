@@ -1,7 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import styles from './Styles/Hero.module.scss';
 import gsap from 'gsap';
-import side from '../assets/side.webp';
 import male from '../assets/male.jpg';
 import bg1 from '../assets/bg-1.svg';
 import bg2 from '../assets/bg-2.svg';

@@ -32,7 +32,7 @@ const About = () => {
 				scrollTrigger: {
 					trigger: `.${styles.dataWrapper}`, // Trigger the animation when dataWrapper comes into view
 					start: 'top 70%', // Trigger when the top of dataWrapper reaches 80% of the viewport height
-					end: 'top 10%', // End when the top reaches 20%
+					end: 'bottom 50%', // End when the top reaches 20%
 					scrub: true, // Smooth animation tied to the scroll position
 					markers: false, // Show markers for debugging
 				},
@@ -67,6 +67,19 @@ const About = () => {
 				},
 			}
 		);
+
+		gsap.from(`.${styles.smallInfo}`, {
+			opacity: 0,
+			y: 20,
+			x: 20,
+			duration: 1,
+			scrollTrigger: {
+				trigger: `.${styles.smallInfo}`,
+				start: 'top 70%',
+				end: 'top 10%',
+				scrub: true,
+			},
+		});
 	}, []);
 
 	return (
