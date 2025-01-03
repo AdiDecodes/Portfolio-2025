@@ -63,7 +63,7 @@ const CustomCursor = () => {
 			});
 		};
 
-		const handleMouseEnter = (e) => {
+		const handleMouseEnter = () => {
 			setIsHovering(true);
 		};
 

@@ -12,7 +12,6 @@ import {
 import { MdEmail } from 'react-icons/md';
 import { CiCoffeeCup } from 'react-icons/ci';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
 
@@ -47,15 +46,6 @@ import { gsap } from 'gsap';
 // import coffee4 from '../../assets/Socials/BMAC/coffee1.png';
 
 const Social = () => {
-	const overLayRef = useRef(null);
-	const [hover, setHover] = useState({
-		id: -1,
-		icon: null,
-		name: '',
-		link: '',
-		images: [],
-	});
-
 	const [socials, setSocials] = useState([
 		{
 			id: 1,

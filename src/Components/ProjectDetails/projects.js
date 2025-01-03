@@ -1,4 +1,4 @@
-import cleverStudio from '../../assets/Projects/cleverstudio.png';
+import cleverStudio from '../../assets/Projects/Cleverstudio.png';
 import cleverStudio1 from '../../assets/Projects/cs-2.png';
 import cleverStudio2 from '../../assets/Projects/cs-3.png';
 

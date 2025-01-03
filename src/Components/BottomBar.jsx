@@ -9,7 +9,6 @@ import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 
 const BottomBar = ({ progress, sections }) => {
-	const navigate = useNavigate();
 	const [isVisible, setIsVisible] =
 		useState(false);
 	const bottomBarRef = useRef(null);
