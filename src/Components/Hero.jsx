@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './Styles/Hero.module.scss';
 import gsap from 'gsap';
-import male from '../assets/Aditya.jpeg';
+import male from '../assets/Aditya.svg';
 import bg1 from '../assets/bg-1.svg';
 import bg2 from '../assets/bg-2.svg';
 import { useGSAP } from '@gsap/react';

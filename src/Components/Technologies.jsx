@@ -193,7 +193,6 @@ const Technologies = () => {
 							}
 						}}
 						onMouseLeave={() => {
-							
 							setModal({ active: false, index });
 						}}
 						className={
@@ -224,6 +223,13 @@ const Technologies = () => {
 						</h6>
 						<div className={styles.icon}>
 							<GoArrowRight />
+							<img
+								src={technology.image}
+								alt={technology.name}
+								onFocus={(e) => {
+									e.preventDefault();
+								}}
+							/>
 						</div>
 					</div>
 				))}

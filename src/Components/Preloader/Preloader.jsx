@@ -57,13 +57,7 @@ const Preloader = ({ completed }) => {
 			ref={mainRef}
 			className={styles.main}
 		>
-			<div className={styles.parentHolder}>
-				<p>{percentage}%</p>
-				<div
-					className={styles.verticalBar}
-					ref={loaderRef}
-				></div>
-			</div>
+			<p>{percentage}%</p>
 		</div>
 	);
 };
