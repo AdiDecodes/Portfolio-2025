@@ -1,7 +1,4 @@
-import React, {
-	useEffect,
-	useState,
-} from 'react';
+import React, { useState } from 'react';
 import styles from './course.module.scss';
 import js from '../../assets/Course/JSHERO.png';
 import { MdArrowRightAlt } from 'react-icons/md';
