@@ -8,6 +8,7 @@ import peerbond from '../../assets/Projects/peerbond.png';
 import igloaded from '../../assets/Projects/igloaded.png';
 import vocalize from '../../assets/Projects/vocalize.png';
 import farzi from '../../assets/Projects/farzi-2.png';
+import dothedue from '../../assets/Projects/dothedue.png';
 import { Link } from 'react-router-dom';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
@@ -16,7 +17,7 @@ const Project = () => {
 	const projects = [
 		{
 			id: 1,
-			name: 'PeerBond',
+			name: 'PeerBond (Under Development)',
 			description:
 				'A social media platform that connects you with your peers and helps you share your thoughts and ideas with them.',
 			image: peerbond,
@@ -48,7 +49,7 @@ const Project = () => {
 		},
 		{
 			id: 5,
-			name: 'Vocalize (Under Development)',
+			name: 'Vocalize',
 			description:
 				'Vocalize is a web based platform that supports realtime speech translation and captions for your meeting.',
 			image: vocalize,
@@ -60,6 +61,14 @@ const Project = () => {
 			description:
 				'Farzi.js is a npm package that helps you generate fake data for your projects.',
 			image: farzi,
+			year: '2024',
+		},
+		{
+			id: 7,
+			name: 'DoTheDue',
+			description:
+				'DoTheDue is a package that can help you show customizable messages on top of React Based Websites.',
+			image: dothedue,
 			year: '2024',
 		},
 	];

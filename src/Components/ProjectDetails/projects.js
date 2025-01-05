@@ -20,6 +20,10 @@ import farzi1 from '../../assets/Projects/farzi-1.png';
 import farzi2 from '../../assets/Projects/farzi-2.png';
 import farzi3 from '../../assets/Projects/farzi-3.png';
 
+import dothedue from '../../assets/Projects/dothedue.png';
+import dothedue1 from '../../assets/Projects/dothedue-1.png';
+import dothedue2 from '../../assets/Projects/dothedue-2.png';
+
 export default [
 	{
 		id: 1,
@@ -96,7 +100,7 @@ export default [
 		description:
 			'CleverStudio is a web development agency that provides you with the best web development services. Apart from web development, CleverStudio also provides services like SEO, SMM, and more. We have a team of experienced developers who are always ready to help you with your project. CleverStudio have worked with clients from all over the world and have delivered projects on time. CleverStudio believe in providing quality services to our clients and that is why CleverStudio have a long list of satisfied clients. So, if you are looking for a web development agency that can help you with your project, then CleverStudio is the right choice for you.',
 		myInvolvement:
-			'I was responsible for the front-end development of the website.',
+			'I was responsible for the front-end development and API-Integration of the website.',
 		image: [
 			cleverStudio,
 			cleverStudio1,
@@ -120,7 +124,7 @@ export default [
 			},
 			{
 				name: 'GitHub',
-				url: 'https://www.github.com/',
+				url: 'https://github.com/Project-Clever-Studio/web-frontend',
 			},
 		],
 	},
@@ -128,10 +132,10 @@ export default [
 		id: 4,
 		name: 'TechBucket',
 		description:
-			'TechBucket is a platform where you can find all the latest tech news, reviews, and updates. TechBucket is a one-stop destination for all tech enthusiasts. TechBucket provides you with the latest news, reviews, and updates on all the latest gadgets, smartphones, laptops, and more. TechBucket also provides you with tutorials and guides on how to use different gadgets and software. So, if you are a tech enthusiast and want to stay updated with all the latest tech news, then TechBucket is the right place for you.',
+			'TechBucket is a media agency based in Canada. TechBucket provides you with the latest tech news and reviews. TechBucket also provides services like web development, app development, and more. TechBucket have a team of experienced developers who are always ready to help you with your project. TechBucket have worked with clients from all over the world and have delivered projects on time. TechBucket believe in providing quality services to our clients and that is why TechBucket have a long list of satisfied clients. So, if you are looking for a media agency that can help you with your project, then TechBucket is the right choice for you.',
 		image: [techbucket1, techbucket, techbucket2],
 		myInvolvement:
-			'I was responsible for the front-end development of the website.',
+			'I was responsible for designing and development of the website.',
 		techStack: [
 			'Vanilla Javascript',
 			'HTML',
@@ -143,11 +147,7 @@ export default [
 		urls: [
 			{
 				name: 'Website',
-				url: 'https://techbucket.in/',
-			},
-			{
-				name: 'GitHub',
-				url: 'https://www.github.com/',
+				url: 'https://techbucket.ca/',
 			},
 		],
 	},
@@ -174,13 +174,13 @@ export default [
 		dateStarted: 'Oct 2024',
 		dateCompleted: 'Present',
 		urls: [
-			{
-				name: 'Website',
-				url: '#',
-			},
+			// {
+			// 	name: 'Website',
+			// 	url: 'https://vocalize-rt-voice-translation.vercel.app/',
+			// },
 			{
 				name: 'GitHub',
-				url: 'https://www.github.com/',
+				url: 'https://github.com/Vocalize-RT-Voice-Translation/Client',
 			},
 		],
 	},
@@ -203,6 +203,28 @@ export default [
 			{
 				name: 'GitHub',
 				url: 'https://github.com/AdiDecodes/Farzi.js',
+			},
+		],
+	},
+	{
+		id: 7,
+		name: 'DoTheDue',
+		description:
+			'DoTheDue is a lightweight JavaScript library designed to display customizable information messages on websites with pending payment dues for their development. Ideal for web developers and agencies, DoTheDue provides an easy-to-integrate solution to notify website owners about outstanding payments. With flexible styling and behavior options, it seamlessly blends with any website design, ensuring effective communication without disrupting the user experience.',
+		image: [dothedue2, dothedue, dothedue1],
+		myInvolvement:
+			'I myself created this whole package and designed it to be lightweight and fast, so that it can be used in a wide range of projects without any performance issues.',
+		techStack: ['Typescript', 'Node.js', 'NPM'],
+		dateStarted: 'Dec 2024',
+		dateCompleted: 'Jan 2025',
+		urls: [
+			{
+				name: 'NPM',
+				url: 'https://www.npmjs.com/package/dothedue',
+			},
+			{
+				name: 'GitHub',
+				url: 'https://github.com/AdiDecodes/do-the-due',
 			},
 		],
 	},
