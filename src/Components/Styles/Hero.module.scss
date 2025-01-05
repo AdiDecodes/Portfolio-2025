@@ -87,23 +87,29 @@
 		> .text {
 			width: 100%;
 			padding: 0 0 0 5rem;
+			overflow: hidden;
 
 			> h1 {
-				font-size: 8vw;
+				font-size: 10rem;
 				font-family: 'Neue', sans-serif;
 				color: #ffffffdf;
 				font-weight: 100;
 				text-align: left;
-				line-height: 85%;
 			}
 
 			> p {
-				font-size: 14vw;
+				font-size: 10rem;
 				font-family: 'Neue', sans-serif;
 				color: #ffffff;
 				font-weight: 100;
 				text-align: center;
-				line-height: 85%;
+			}
+
+			&:nth-child(2) {
+				> p {
+					font-size: 10vw;
+					font-weight: 200;
+				}
 			}
 
 			&:nth-child(3) {
@@ -113,7 +119,6 @@
 					color: #ffffffdf;
 					font-weight: 100;
 					text-align: right;
-					line-height: 85%;
 					margin: 0 5rem 0 0;
 				}
 			}
@@ -196,7 +201,7 @@
 
 			> .text {
 				width: 100%;
-				padding: 0 0 0 3rem;
+				padding: 0 2rem;
 
 				> h1 {
 					font-size: 8vw;
@@ -205,6 +210,7 @@
 					font-weight: 100;
 					text-align: left;
 					line-height: 85%;
+					width: 100%;
 				}
 
 				> p {
@@ -214,6 +220,13 @@
 					font-weight: 100;
 					text-align: center;
 					line-height: 85%;
+					width: 100%;
+				}
+
+				&:nth-child(2) {
+					> p {
+						font-size: 13vw;
+					}
 				}
 
 				&:nth-child(3) {
@@ -224,7 +237,8 @@
 						font-weight: 100;
 						text-align: right;
 						line-height: 85%;
-						margin: 0 5rem 0 0;
+						margin: 0;
+						width: 100%;
 					}
 				}
 			}

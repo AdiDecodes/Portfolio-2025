@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import styles from './Styles/About.module.scss';
 import { IoIosArrowRoundForward } from 'react-icons/io';
-import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
 
 const About = () => {
 	useEffect(() => {
@@ -31,8 +31,8 @@ const About = () => {
 				stagger: 0.5, // Delay each word's animation by 0.1 seconds
 				scrollTrigger: {
 					trigger: `.${styles.dataWrapper}`, // Trigger the animation when dataWrapper comes into view
-					start: 'top 70%', // Trigger when the top of dataWrapper reaches 80% of the viewport height
-					end: 'bottom 50%', // End when the top reaches 20%
+					start: 'top 90%', // Trigger when the top of dataWrapper reaches 80% of the viewport height
+					end: 'bottom 85%', // End when the top reaches 20%
 					scrub: true, // Smooth animation tied to the scroll position
 					markers: false, // Show markers for debugging
 				},
@@ -75,8 +75,8 @@ const About = () => {
 			duration: 1,
 			scrollTrigger: {
 				trigger: `.${styles.smallInfo}`,
-				start: 'top 70%',
-				end: 'top 10%',
+				start: 'top 90%', // Trigger when the top of dataWrapper reaches 80% of the viewport height
+				end: 'bottom 85%', // End when the top reaches 20%
 				scrub: true,
 			},
 		});

@@ -15,6 +15,7 @@
 		margin: 0 0 1rem 0;
 
 		h2 {
+			font-family: 'Neue';
 			width: 100%;
 			font-size: 19vw;
 			font-weight: 400;
@@ -24,6 +25,7 @@
 		}
 
 		> .smallInfo {
+			font-family: 'Neue';
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
@@ -37,6 +39,7 @@
 			}
 
 			p {
+				font-family: 'Neue';
 				font-size: 0.85vw;
 				font-weight: 400;
 				color: #ffffff49;
@@ -75,11 +78,10 @@
 	}
 }
 
-
 @media (max-width: 768px) {
 	.main {
 		margin-top: 5rem;
-		padding: 0 .5rem 3rem .5rem;
+		padding: 0 0.5rem 3rem 0.5rem;
 
 		> .heading {
 			display: flex;

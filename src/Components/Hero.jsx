@@ -57,37 +57,37 @@ const Hero = () => {
 					scale: 0,
 					duration: 1,
 				},
-				1.2
+				1.3
 			)
 			.from(
 				text1.chars,
 				{
 					opacity: 0,
-					y: 100,
+					y: 50,
 					duration: 0.75,
 					stagger: 0.05,
 				},
-				1.95
+				1.5 // Starts right after the images appear
 			)
 			.from(
 				text2.chars,
 				{
 					opacity: 0,
-					y: 100,
+					y: 50,
 					duration: 0.75,
 					stagger: 0.05,
 				},
-				2.275
+				2.3 // Starts after the first text animation finishes
 			)
 			.from(
 				text3.chars,
 				{
 					opacity: 0,
-					y: 100,
+					y: 50,
 					duration: 0.75,
 					stagger: 0.05,
 				},
-				2.6
+				3 // Starts after the second text animation finishes
 			);
 	});
 

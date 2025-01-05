@@ -23,6 +23,7 @@ import {
 	AnimatePresence,
 } from 'framer-motion';
 import { SiBuymeacoffee } from 'react-icons/si';
+import { RiCloseLine } from 'react-icons/ri';
 
 const Home = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -78,7 +79,7 @@ const Home = () => {
 
 			tl.from(el, {
 				opacity: 0,
-				y: 50,
+				y: 20,
 				delay: 1,
 				stagger: 0.1,
 			});
@@ -100,7 +101,7 @@ const Home = () => {
 
 		tl.to(el, {
 			opacity: 0,
-			y: 50,
+			y: -20,
 			stagger: 0.1,
 			onComplete: () => setShowMenu(false),
 		});
@@ -118,15 +119,15 @@ const Home = () => {
 					<motion.div
 						initial={{
 							opacity: 0,
-							x: '-100%',
+							y: '100%',
 						}}
 						animate={{
 							opacity: 1,
-							x: 0,
+							y: 0,
 						}}
 						exit={{
 							opacity: 0,
-							x: '-100%',
+							y: '100%',
 						}}
 						transition={{
 							duration: 0.5,
@@ -236,7 +237,7 @@ const Home = () => {
 					showMenu ? closeMenu() : openMenu()
 				}
 			>
-				<RiMenuLine />
+				{showMenu ? <RiCloseLine /> : <RiMenuLine />}
 			</div>
 			<div ref={heroRef}>
 				<Hero />
