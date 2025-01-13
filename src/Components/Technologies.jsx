@@ -113,58 +113,73 @@ const Technologies = () => {
 		const aboutMeText = document.querySelector(
 			`.${styles.titleWrapper} h2`
 		);
-		const letters = aboutMeText.innerText.split(''); // Split the text into letters
+		const letters = aboutMeText.innerText.split('');
 		aboutMeText.innerHTML = letters
 			.map((letter) => `<span>${letter}</span>`)
-			.join(''); // Wrap each letter in a span
+			.join('');
 
 		// Animate each letter with GSAP
 		gsap.fromTo(
-			`.${styles.titleWrapper} h2 span`, // Target each letter
+			`.${styles.titleWrapper} h2 span`,
 			{
-				opacity: 0, // Start hidden
-				y: 50, // Start slightly below
+				opacity: 0,
+				y: 100,
 			},
 			{
-				opacity: 1, // Fade in the letter
-				y: 0, // Move the letter to its original position
-				duration: 0.3, // Duration of each letter's animation
-				stagger: 0.05, // Delay each letter's animation by 0.05 seconds
+				opacity: 1,
+				y: 0,
+				duration: 0.3,
+				stagger: 0.02,
 				scrollTrigger: {
-					trigger: `.${styles.titleWrapper}`, // Trigger the animation when the heading comes into view
-					start: 'top 80%', // Trigger when the top of the heading reaches 80% of the viewport height
-					end: 'top 20%', // End when the top reaches 20%
-					scrub: true, // Smooth animation tied to the scroll position
+					trigger: `.${styles.titleWrapper}`,
+					start: 'top 65%',
+					end: 'top 20%',
+					scrub: true,
 				},
+				ease: 'expo.out',
 			}
 		);
 
-		const textElement = document.querySelector(
-			`.${styles.itemWrapper}`
+		const items = gsap.utils.toArray(
+			`.${styles.itemWrapper} div`
 		);
 
-		// Animate each word with GSAP
-
-		gsap.fromTo(
-			`.${styles.itemWrapper} div`, // Target each word
-			{
-				opacity: 0, // Start hidden
-				y: 20, // Start slightly below
-			},
-			{
-				opacity: 1, // Fade in the word
-				y: 0, // Move the word to its original position
-				duration: 4.5, // Duration of each word's animation
-				stagger: 0.5, // Delay each word's animation by 0.1 seconds
-				scrollTrigger: {
-					trigger: `.${styles.itemWrapper}`, // Trigger the animation when dataWrapper comes into view
-					start: 'top 70%', // Trigger when the top of dataWrapper reaches 80% of the viewport height
-					end: 'top 10%', // End when the top reaches 20%
-					scrub: true, // Smooth animation tied to the scroll position
-					markers: false, // Show markers for debugging
+		items.forEach((item) => {
+			gsap.fromTo(
+				item,
+				{
+					opacity: 0,
+					y: 30,
 				},
-			}
-		);
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.3,
+					stagger: 0.08,
+					scrollTrigger: {
+						trigger: item,
+						start: 'top 70%',
+						end: 'top 10%',
+						markers: false,
+						scrub: true,
+					},
+					ease: 'expo.out',
+				}
+			);
+		});
+
+		gsap.from(`.${styles.smallInfo}`, {
+			opacity: 0,
+			y: 20,
+			x: 20,
+			duration: 1,
+			scrollTrigger: {
+				trigger: `.${styles.smallInfo}`,
+				start: 'top 90%',
+				end: 'bottom 85%',
+				scrub: true,
+			},
+		});
 	}, []);
 
 	const getDeviceType = () => {
@@ -178,9 +193,9 @@ const Technologies = () => {
 		<div className={styles.main}>
 			<div className={styles.titleWrapper}>
 				<h2 className='title'>TECHSTACK</h2>
-				<p className='description'>
-					TECHNOLOGY I USE OFTEN
-				</p>
+			</div>
+			<div className={styles.smallInfo}>
+				<p>Know more about me</p>
 			</div>
 			<div className={styles.itemWrapper}>
 				{technologies.map((technology, index) => (

@@ -66,10 +66,10 @@ const TopBar = () => {
 			contactRef.current,
 		];
 		gsap.from(itemsArray, {
-			delay: 2.5,
+			delay: 0.5,
 			opacity: 0,
-			ease: 'power3.inOut',
-			y: -50,
+			ease: 'expo.out',
+			y: -100,
 			stagger: 0.1,
 			duration: 1,
 		});

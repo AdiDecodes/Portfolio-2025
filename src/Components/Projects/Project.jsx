@@ -88,26 +88,40 @@ const Project = () => {
 			.map((letter) => `<span>${letter}</span>`)
 			.join(''); // Wrap each letter in a span
 
-		// Animate each letter with GSAP
 		gsap.fromTo(
 			`.${styles.heading} h2 span`, // Target each letter
 			{
 				opacity: 0, // Start hidden
-				y: 50, // Start slightly below
+				y: 100, // Start slightly below
 			},
 			{
-				opacity: 1, // Fade in the letter
-				y: 0, // Move the letter to its original position
-				duration: 0.3, // Duration of each letter's animation
-				stagger: 0.05, // Delay each letter's animation by 0.05 seconds
+				opacity: 1,
+				y: 0,
+				duration: 0.3,
+				stagger: 0.02,
 				scrollTrigger: {
-					trigger: `.${styles.heading}`, // Trigger the animation when the heading comes into view
-					start: 'top 80%', // Trigger when the top of the heading reaches 80% of the viewport height
-					end: 'top 20%', // End when the top reaches 20%
-					scrub: true, // Smooth animation tied to the scroll position
+					trigger: `.${styles.heading}`,
+					start: 'top 65%',
+					end: 'top 20%',
+					scrub: true,
 				},
+				ease: 'expo.out',
 			}
 		);
+
+		gsap.from(`.${styles.smallInfo}`, {
+			opacity: 0,
+			y: 20,
+			x: 20,
+			duration: 1,
+			scrollTrigger: {
+				trigger: `.${styles.smallInfo}`,
+				start: 'top 90%',
+				end: 'bottom 85%',
+				scrub: true,
+			},
+			ease: 'power4.out',
+		});
 
 		items.forEach((item, index) => {
 			gsap.from(item, {
@@ -161,10 +175,10 @@ const Project = () => {
 	return (
 		<div className={styles.main}>
 			<div className={styles.heading}>
-				<h2 className='title'>PROJECTS</h2>
-				<p className='description'>
-					A LIST OF OG PROJECTS
-				</p>
+				<h2>PROJECTS</h2>
+			</div>
+			<div className={styles.smallInfo}>
+				<p>A LIST OF OG PROJECTS</p>
 			</div>
 			<div className={styles.projectWrapper}>
 				{projects

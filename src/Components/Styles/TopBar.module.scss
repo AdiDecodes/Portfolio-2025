@@ -3,7 +3,9 @@
 	align-items: center;
 	justify-content: space-between;
 	background-color: var(--bg);
-	padding: 0.25rem 2rem 0 2rem;
+	padding: 1rem 2rem 0 2rem;
+	height: 5vh;
+	max-height: 5vh;
 
 	> p {
 		font-size: 1vw;
@@ -18,6 +20,7 @@
 		padding: 0.5rem 0.85rem;
 		border: 1px solid var(--border);
 		border-radius: 10rem;
+		margin-left: 7rem;
 
 		> p {
 			font-size: 0.75vw;

@@ -8,63 +8,60 @@ const About = () => {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
-		// Split text into words and wrap each word in a span
 		const textElement = document.querySelector(
 			`.${styles.dataWrapper} p`
 		);
-		const words = textElement.innerText.split(' '); // Split by space into words
+		const words = textElement.innerText.split(' ');
 		textElement.innerHTML = words
 			.map((word) => `<span>${word}</span>`)
-			.join(' '); // Wrap each word in a span
+			.join(' ');
 
-		// Animate each word with GSAP
 		gsap.fromTo(
-			`.${styles.dataWrapper} p span`, // Target each word
+			`.${styles.dataWrapper} p span`,
 			{
-				opacity: 0, // Start hidden
-				y: 20, // Start slightly below
+				opacity: 0,
 			},
 			{
-				opacity: 1, // Fade in the word
-				y: 0, // Move the word to its original position
-				duration: 4.5, // Duration of each word's animation
-				stagger: 0.5, // Delay each word's animation by 0.1 seconds
+				opacity: 1,
+				duration: 4.5,
+				stagger: 0.5,
 				scrollTrigger: {
-					trigger: `.${styles.dataWrapper}`, // Trigger the animation when dataWrapper comes into view
-					start: 'top 90%', // Trigger when the top of dataWrapper reaches 80% of the viewport height
-					end: 'bottom 85%', // End when the top reaches 20%
-					scrub: true, // Smooth animation tied to the scroll position
-					markers: false, // Show markers for debugging
+					trigger: `.${styles.dataWrapper}`,
+					start: 'top 70%',
+					end: 'bottom 85%',
+					scrub: true,
+					markers: false,
 				},
+				ease: 'power4.out',
 			}
 		);
 
 		const aboutMeText = document.querySelector(
 			`.${styles.heading} h2`
 		);
-		const letters = aboutMeText.innerText.split(''); // Split the text into letters
+		const letters = aboutMeText.innerText.split('');
 		aboutMeText.innerHTML = letters
 			.map((letter) => `<span>${letter}</span>`)
-			.join(''); // Wrap each letter in a span
+			.join('');
 
-		// Animate each letter with GSAP
 		gsap.fromTo(
 			`.${styles.heading} h2 span`, // Target each letter
 			{
 				opacity: 0, // Start hidden
-				y: 50, // Start slightly below
+				y: 100, // Start slightly below
 			},
 			{
-				opacity: 1, // Fade in the letter
-				y: 0, // Move the letter to its original position
-				duration: 0.3, // Duration of each letter's animation
-				stagger: 0.05, // Delay each letter's animation by 0.05 seconds
+				opacity: 1,
+				y: 0,
+				duration: 0.3,
+				stagger: 0.02,
 				scrollTrigger: {
-					trigger: `.${styles.heading}`, // Trigger the animation when the heading comes into view
-					start: 'top 80%', // Trigger when the top of the heading reaches 80% of the viewport height
-					end: 'top 20%', // End when the top reaches 20%
-					scrub: true, // Smooth animation tied to the scroll position
+					trigger: `.${styles.heading}`,
+					start: 'top 65%',
+					end: 'top 20%',
+					scrub: true,
 				},
+				ease: 'expo.out',
 			}
 		);
 
@@ -75,10 +72,11 @@ const About = () => {
 			duration: 1,
 			scrollTrigger: {
 				trigger: `.${styles.smallInfo}`,
-				start: 'top 90%', // Trigger when the top of dataWrapper reaches 80% of the viewport height
-				end: 'bottom 85%', // End when the top reaches 20%
+				start: 'top 90%',
+				end: 'bottom 85%',
 				scrub: true,
 			},
+			ease: 'power4.out',
 		});
 	}, []);
 
@@ -86,10 +84,10 @@ const About = () => {
 		<div className={styles.main}>
 			<div className={styles.heading}>
 				<h2>ABOUT ME</h2>
-				<div className={styles.smallInfo}>
-					<p>Know more about me</p>
-					<IoIosArrowRoundForward />
-				</div>
+			</div>
+			<div className={styles.smallInfo}>
+				<p>Know more about me</p>
+				<IoIosArrowRoundForward />
 			</div>
 			<div className={styles.dataWrapper}>
 				<p>

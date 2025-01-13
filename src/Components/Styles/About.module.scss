@@ -6,56 +6,61 @@
 	min-height: 100vh;
 	padding: 0 2rem 5rem 2rem;
 
+	span {
+		display: inline-block;
+	}
+
 	> .heading {
 		width: 100%;
 		display: flex;
 		align-items: flex-end;
 		justify-content: center;
 		flex-direction: column;
-		margin: 0 0 1rem 0;
+		margin: 0;
+		overflow: hidden;
 
 		h2 {
 			font-family: 'Neue';
 			width: 100%;
-			font-size: 19vw;
+			font-size: 15vw;
 			font-weight: 400;
 			color: white;
 			line-height: 90%;
-			text-align: center;
+			text-align: left;
+		}
+	}
+
+	> .smallInfo {
+		font-family: 'Neue';
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 0 0 1rem 1.5rem;
+		gap: 0.5rem;
+
+		&:hover {
+			> svg {
+				color: #ffffffb8;
+			}
 		}
 
-		> .smallInfo {
+		p {
 			font-family: 'Neue';
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			margin: 0 4rem 0 0;
-			gap: 0.5rem;
+			font-size: 0.85vw;
+			font-weight: 400;
+			color: #ffffff49;
+			line-height: 90%;
+			letter-spacing: 0.2rem;
+			text-align: center;
+			padding: 0;
+			text-transform: uppercase;
+		}
 
-			&:hover {
-				> svg {
-					color: #ffffffb8;
-				}
-			}
-
-			p {
-				font-family: 'Neue';
-				font-size: 0.85vw;
-				font-weight: 400;
-				color: #ffffff49;
-				line-height: 90%;
-				letter-spacing: 0.2rem;
-				text-align: center;
-				padding: 0;
-				text-transform: uppercase;
-			}
-
-			> svg {
-				font-size: 1.75vw;
-				color: #ffffffdc;
-				transition: all 0.35s ease-in-out;
-				transform: rotate(90deg);
-			}
+		> svg {
+			font-size: 1.75vw;
+			color: #ffffffdc;
+			transition: all 0.35s ease-in-out;
+			transform: rotate(90deg);
 		}
 	}
 
@@ -87,27 +92,53 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			padding: 0 1rem;
 
 			h2 {
-				font-size: 18vw;
+				text-align: center;
+				font-size: 15vw;
+			}
+		}
+
+		> .smallInfo {
+			width: 100%;
+			font-family: 'Neue';
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1rem 0 0 0;
+			gap: 0.5rem;
+
+			&:hover {
+				> svg {
+					color: #ffffffb8;
+				}
 			}
 
-			> .smallInfo {
-				margin: 1rem 0 0 0;
+			p {
+				font-family: 'Neue';
+				font-size: 3.5vw;
+				font-weight: 400;
+				color: #ffffff49;
+				line-height: 90%;
+				letter-spacing: 0.2rem;
+				text-align: center;
+				padding: 0;
+				text-transform: uppercase;
+			}
 
-				p {
-					font-size: 3.5vw;
-				}
-
-				> svg {
-					font-size: 4vw;
-				}
+			> svg {
+				font-size: 4vw;
+				color: #ffffffdc;
+				transition: all 0.35s ease-in-out;
+				transform: rotate(90deg);
 			}
 		}
 
 		> .dataWrapper {
 			flex-direction: column;
 			gap: 1rem;
+			padding: 0 .75rem;
 
 			> p {
 				font-size: 5vw;

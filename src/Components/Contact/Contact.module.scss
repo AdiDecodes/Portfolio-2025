@@ -13,7 +13,6 @@
 		align-items: flex-end;
 		justify-content: center;
 		flex-direction: column;
-		margin: 0 0 1rem 0;
 
 		h2 {
 			font-family: 'Neue';
@@ -23,38 +22,40 @@
 			color: white;
 			line-height: 90%;
 			text-align: center;
+			overflow: hidden;
+		}
+	}
+	> .smallInfo {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin: 0;
+		gap: 1rem;
+		width: 100%;
+		padding: 0 4rem 0 0;
+
+		&:hover {
+			> svg {
+				color: #ffffffdc;
+				transform: scale(1.75);
+			}
 		}
 
-		> .smallInfo {
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			margin: 0 4rem 0 0;
-			gap: 1rem;
+		p {
+			font-size: 0.85vw;
+			font-weight: 400;
+			color: #ffffff49;
+			line-height: 90%;
+			letter-spacing: 0.2rem;
+			text-align: center;
+			padding: 0;
+			text-transform: uppercase;
+		}
 
-			&:hover {
-				> svg {
-					color: #ffffffdc;
-					transform: scale(1.75);
-				}
-			}
-
-			p {
-				font-size: 0.85vw;
-				font-weight: 400;
-				color: #ffffff49;
-				line-height: 90%;
-				letter-spacing: 0.2rem;
-				text-align: center;
-				padding: 0;
-				text-transform: uppercase;
-			}
-
-			> svg {
-				font-size: 1.75vw;
-				color: #ffffffdc;
-				transition: all 0.35s ease-in-out;
-			}
+		> svg {
+			font-size: 1.75vw;
+			color: #ffffffdc;
+			transition: all 0.35s ease-in-out;
 		}
 	}
 
@@ -287,17 +288,41 @@
 			h2 {
 				font-size: 15vw;
 			}
+		}
 
-			> .smallInfo {
-				margin: 1rem 0 0 0;
+		> .smallInfo {
+			width: 100%;
+			font-family: 'Neue';
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 1rem 1rem 2rem 2rem;
+			padding: 0;
+			gap: 0.5rem;
 
-				p {
-					font-size: 4vw;
-				}
-
+			&:hover {
 				> svg {
-					font-size: 3vw;
+					color: #ffffffb8;
 				}
+			}
+
+			p {
+				font-family: 'Neue';
+				font-size: 3.5vw;
+				font-weight: 400;
+				color: #ffffff49;
+				line-height: 90%;
+				letter-spacing: 0.2rem;
+				text-align: center;
+				padding: 0;
+				text-transform: uppercase;
+			}
+
+			> svg {
+				font-size: 4vw;
+				color: #ffffffdc;
+				transition: all 0.35s ease-in-out;
+				transform: rotate(90deg);
 			}
 		}
 

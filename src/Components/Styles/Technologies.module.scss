@@ -1,34 +1,58 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	padding: 0rem 5rem;
+	padding: 0rem 2rem;
 	background-color: var(--bg);
 
 	> .titleWrapper {
 		width: 100%;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: flex-end;
+		justify-content: flex-start;
 		flex-direction: column;
 
 		> h2 {
-			font-size: 17vw;
+			font-size: 15vw;
 			font-family: 'Neue';
 			font-weight: 400;
 			color: white;
 			line-height: 90%;
+			text-align: left;
+			overflow: hidden;
+		}
+	}
+
+	> .smallInfo {
+		font-family: 'Neue';
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin: 1rem 0 1rem 1.5rem;
+		gap: 0.5rem;
+
+		&:hover {
+			> svg {
+				color: #ffffffb8;
+			}
 		}
 
 		p {
-			width: 100%;
+			font-family: 'Neue';
 			font-size: 0.85vw;
 			font-weight: 400;
-			font-family: 'Neue';
-			color: #ffffff64;
+			color: #ffffff49;
+			line-height: 90%;
 			letter-spacing: 0.2rem;
-			text-align: left;
-			padding: 0 5rem;
-			margin: 0.5rem 0;
+			text-align: center;
+			padding: 0;
+			text-transform: uppercase;
+		}
+
+		> svg {
+			font-size: 1.75vw;
+			color: #ffffffdc;
+			transition: all 0.35s ease-in-out;
+			transform: rotate(90deg);
 		}
 	}
 
@@ -40,7 +64,7 @@
 		align-items: center;
 		width: 100%;
 		margin-top: 2rem;
-		padding: 2rem 5rem;
+		padding: 2rem;
 		gap: 1rem;
 		cursor: none;
 
@@ -155,6 +179,40 @@
 			}
 		}
 
+		> .smallInfo {
+			font-family: 'Neue';
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			margin: 1rem 0 1rem 1rem;
+			gap: 0.5rem;
+
+			&:hover {
+				> svg {
+					color: #ffffffb8;
+				}
+			}
+
+			p {
+				font-family: 'Neue';
+				font-size: 3.5vw;
+				font-weight: 400;
+				color: #ffffff49;
+				line-height: 90%;
+				letter-spacing: 0.2rem;
+				text-align: center;
+				padding: 0;
+				text-transform: uppercase;
+			}
+
+			> svg {
+				font-size: 1.75vw;
+				color: #ffffffdc;
+				transition: all 0.35s ease-in-out;
+				transform: rotate(90deg);
+			}
+		}
+
 		> .itemWrapper {
 			padding: 0;
 			width: 100%;
@@ -182,7 +240,6 @@
 						object-fit: cover;
 						outline: none;
 						border: none;
-
 					}
 
 					&:hover {

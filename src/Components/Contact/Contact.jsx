@@ -10,6 +10,8 @@ import { showToast } from '../Utils/toast';
 import { sendMail } from '../../mail';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import axios from 'axios';
+import { useGSAP } from '@gsap/react';
 
 const Contact = () => {
 	const [tags, setTags] = useState([
@@ -67,16 +69,32 @@ const Contact = () => {
 		setSendButtonState('SENDING');
 
 		try {
-			const response = await sendMail(contactData);
-			if (response.status == 'success') {
+			const response = await axios.post(
+				'https://portfolio-2025-two.vercel.app/api/send-mail',
+				contactData
+			);
+			if (response.data.status == 'success') {
 				setSendButtonState('DEFAULT');
+				setContactData({
+					name: '',
+					email: '',
+					purpose: [],
+					title: '',
+					message: '',
+				});
+				setSelectedTags([]);
 				showToast(
 					'Thank you for reaching out. I will get back to you soon.',
 					'success'
 				);
+			} else {
+				setSendButtonState('DEFAULT');
+				showToast(
+					'Oh no! Something went wrong. Please try again later',
+					'error'
+				);
 			}
 		} catch (error) {
-			console.log(error);
 			setSendButtonState('DEFAULT');
 			showToast(
 				'Oh no! Something went wrong. Please try again later',
@@ -126,35 +144,41 @@ const Contact = () => {
 		sendEmail();
 	};
 
-	useEffect(() => {
+	useGSAP(() => {
 		gsap.registerPlugin(ScrollTrigger);
+
 		const aboutMeText = document.querySelector(
 			`.${styles.heading} h2`
 		);
-		const letters = aboutMeText.innerText.split('');
-		aboutMeText.innerHTML = letters
-			.map((letter) => `<span>${letter}</span>`)
-			.join('');
 
-		gsap.fromTo(
-			`.${styles.heading} h2 span`, // Target each letter
-			{
-				opacity: 0, // Start hidden
-				y: 50, // Start slightly below
-			},
-			{
-				opacity: 1, // Fade in the letter
-				y: 0, // Move the letter to its original position
-				duration: 0.3, // Duration of each letter's animation
-				stagger: 0.05, // Delay each letter's animation by 0.05 seconds
-				scrollTrigger: {
-					trigger: `.${styles.heading}`,
-					start: 'top 80%',
-					end: 'top 20%',
-					scrub: true,
+		if (aboutMeText) {
+			const letters =
+				aboutMeText.innerText.split('');
+			aboutMeText.innerHTML = letters
+				.map((letter) => `<span>${letter}</span>`)
+				.join('');
+
+			gsap.fromTo(
+				`.${styles.heading} h2 span`, // Target each letter
+				{
+					opacity: 0, // Start hidden
+					y: 100, // Start slightly below
 				},
-			}
-		);
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.3,
+					stagger: 0.02,
+					scrollTrigger: {
+						trigger: `.${styles.heading}`,
+						start: 'top 65%',
+						end: 'top 20%',
+						scrub: true,
+					},
+					ease: 'expo.out',
+				}
+			);
+		}
 
 		gsap.from(`.${styles.smallInfo}`, {
 			opacity: 0,
@@ -163,10 +187,11 @@ const Contact = () => {
 			duration: 1,
 			scrollTrigger: {
 				trigger: `.${styles.smallInfo}`,
-				start: 'top 70%',
-				end: 'top 10%',
+				start: 'top 90%',
+				end: 'bottom 85%',
 				scrub: true,
 			},
+			ease: 'power4.out',
 		});
 
 		gsap.from(`.${styles.contactWrapper}`, {
@@ -186,10 +211,10 @@ const Contact = () => {
 		<div className={styles.main}>
 			<div className={styles.heading}>
 				<h2>CONTACT</h2>
-				<div className={styles.smallInfo}>
-					<p>Let's Build Together</p>
-					<IoIosArrowRoundForward />
-				</div>
+			</div>
+			<div className={styles.smallInfo}>
+				<p>Reach me</p>
+				<IoIosArrowRoundForward />
 			</div>
 			<div className={styles.contactWrapper}>
 				<div className={styles.itemWrapper}>
@@ -198,6 +223,7 @@ const Contact = () => {
 						<input
 							type='text'
 							placeholder=''
+							value={contactData.name}
 							onChange={(e) => {
 								setContactData({
 									...contactData,
@@ -210,6 +236,7 @@ const Contact = () => {
 						<p>EMAIL</p>
 						<input
 							type='text'
+							value={contactData.email}
 							placeholder=''
 							onChange={(e) => {
 								setContactData({
@@ -224,6 +251,7 @@ const Contact = () => {
 						<input
 							type='text'
 							placeholder=''
+							value={contactData.title}
 							onChange={(e) => {
 								setContactData({
 									...contactData,
@@ -258,6 +286,7 @@ const Contact = () => {
 						<input
 							type='text'
 							placeholder=''
+							value={contactData.message}
 							onChange={(e) => {
 								setContactData({
 									...contactData,

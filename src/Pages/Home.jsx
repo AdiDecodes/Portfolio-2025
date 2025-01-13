@@ -80,7 +80,7 @@ const Home = () => {
 			tl.from(el, {
 				opacity: 0,
 				y: 20,
-				delay: 1,
+				delay: 0.2,
 				stagger: 0.1,
 			});
 		},
@@ -119,18 +119,15 @@ const Home = () => {
 					<motion.div
 						initial={{
 							opacity: 0,
-							y: '100%',
 						}}
 						animate={{
 							opacity: 1,
-							y: 0,
 						}}
 						exit={{
 							opacity: 0,
-							y: '100%',
 						}}
 						transition={{
-							duration: 0.5,
+							duration: 0.25,
 						}}
 						className={styles.menuWrapper}
 					>

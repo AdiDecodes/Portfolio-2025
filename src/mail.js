@@ -31,7 +31,8 @@ export const sendMail = async (contact) => {
 	return new Promise(async (resolve, reject) => {
 		const { data, error } =
 			await resend.emails.send({
-				from: 'Acme <onboarding@resend.dev>',
+				from:
+					'Aditya <no-reply@mailer.adidecodes.com>',
 				to: ['singhaditya1826@gmail.com'],
 				subject: 'New mail from portfolio',
 				html: `Hii Aditya, New mail received from your portfolio. Details are as follows: ${html}`,

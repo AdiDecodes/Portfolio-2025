@@ -1,34 +1,63 @@
 .main {
 	width: 100%;
 	background-color: var(--bg);
-	padding: 5rem 0 0 0;
+	padding: 3rem 2rem 5rem 2rem;
+
+	span {
+		display: inline-block;
+	}
 
 	> .heading {
 		width: 100%;
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: center;
 		flex-direction: column;
-		margin: 0 0 1rem 0;
+		margin: 0;
+		overflow: hidden;
 
-		> h2 {
-			font-size: 19vw;
-			font-weight: 400;
+		h2 {
 			font-family: 'Neue';
+			width: 100%;
+			font-size: 15vw;
+			font-weight: 400;
 			color: white;
 			line-height: 90%;
+			text-align: left;
+		}
+	}
+
+	> .smallInfo {
+		font-family: 'Neue';
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin: 0 0 1rem 1.5rem;
+		gap: 0.5rem;
+
+		&:hover {
+			> svg {
+				color: #ffffffb8;
+			}
 		}
 
-		> p {
-			width: 100%;
+		p {
+			font-family: 'Neue';
 			font-size: 0.85vw;
 			font-weight: 400;
-			font-family: 'Neue';
-			color: #ffffff64;
+			color: #ffffff49;
+			line-height: 90%;
 			letter-spacing: 0.2rem;
-			text-align: right;
-			padding: 0 10rem;
-			margin: 0.5rem 0;
+			text-align: center;
+			padding: 0;
+			text-transform: uppercase;
+		}
+
+		> svg {
+			font-size: 1.75vw;
+			color: #ffffffdc;
+			transition: all 0.35s ease-in-out;
+			transform: rotate(90deg);
 		}
 	}
 
@@ -108,14 +137,56 @@
 		padding: 2rem 0 0 0;
 
 		> .heading {
-			> h2 {
-				font-size: 10vw;
+			width: 100%;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			flex-direction: column;
+			margin: 0 2rem;
+			overflow: hidden;
+
+			h2 {
+				font-family: 'Neue';
+				width: 100%;
+				font-size: 15vw;
+				font-weight: 400;
+				color: white;
+				line-height: 90%;
+				text-align: left;
+			}
+		}
+
+		> .smallInfo {
+			font-family: 'Neue';
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			margin: 1rem 1rem 2rem 2rem;
+			gap: 0.5rem;
+
+			&:hover {
+				> svg {
+					color: #ffffffb8;
+				}
 			}
 
-			> p {
-				font-size: 2.5vw;
-				padding: 0 2rem;
+			p {
+				font-family: 'Neue';
+				font-size: 3.5vw;
+				font-weight: 400;
+				color: #ffffff49;
+				line-height: 90%;
+				letter-spacing: 0.2rem;
 				text-align: center;
+				padding: 0;
+				text-transform: uppercase;
+			}
+
+			> svg {
+				font-size: 1.75vw;
+				color: #ffffffdc;
+				transition: all 0.35s ease-in-out;
+				transform: rotate(90deg);
 			}
 		}
 
@@ -131,7 +202,7 @@
 					align-items: center;
 					justify-content: center;
 					width: 100%;
-					border-radius: .75rem;
+					border-radius: 0.75rem;
 					overflow: hidden;
 
 					> img {

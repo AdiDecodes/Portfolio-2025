@@ -1,0 +1,245 @@
+.main {
+	width: 100%;
+	height: calc(92vh);
+	position: relative;
+	background-color: var(--bg);
+	display: flex;
+	align-items: center;
+
+	> .left {
+		height: 100%;
+		width: 45%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-start;
+		flex-direction: column;
+		padding-top: 13rem;
+
+		> h2 {
+			width: 100%;
+			text-align: right;
+			font-size: 10vw;
+			font-weight: 500;
+			color: white;
+			font-family: 'Geist' !important;
+			font-weight: 700;
+			overflow: hidden;
+			line-height: 90%;
+
+			&:nth-child(2) {
+				font-size: 5vw;
+			}
+		}
+
+		> p {
+			font-size: 1.25vw;
+			margin-top: 2rem;
+			font-weight: 200;
+			color: white;
+			text-align: right;
+			width: 100%;
+			font-family: 'Geist' !important;
+			overflow: hidden;
+		}
+
+		> .resumeButton {
+			margin-right: 6rem;
+			margin-top: 2rem;
+			width: 15rem;
+			height: 3rem;
+			background-color: #ee6f3a;
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 0.5rem;
+			cursor: pointer;
+			font-size: 1rem;
+			font-weight: 500;
+			transition: all 0.3s ease-in-out;
+
+			&:hover {
+				background-color: #ff7e4d;
+			}
+		}
+
+		> .scrollBelowContainer {
+			width: 8rem;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			margin-top: 2rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			bottom: 1rem;
+			left: 4rem;
+			cursor: pointer;
+
+			.scrollDownBox {
+				display: block;
+				position: relative;
+				text-decoration: none;
+
+				svg {
+					fill: #ffffff;
+				}
+
+				&.alt svg {
+					fill: #ffffff;
+				}
+
+				.scrollText {
+					width: 100px;
+					height: auto;
+					animation: rotation 10s infinite linear;
+
+					@media (max-width: 768px) {
+						width: 80px;
+					}
+				}
+
+				.scrollIcon {
+					width: 20px;
+					height: auto;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					transition: all 0.2s ease-in-out;
+
+					&:hover {
+						animation: move 0.8s ease-in-out infinite;
+					}
+
+					@media (max-width: 768px) {
+						width: 15px;
+					}
+				}
+			}
+			@keyframes rotation {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(359deg);
+				}
+			}
+
+			@keyframes move {
+				0% {
+					transform: translate(-50%, -50%);
+				}
+				25% {
+					transform: translate(-50%, -35%);
+				}
+				50% {
+					transform: translate(-50%, -50%);
+				}
+				75% {
+					transform: translate(-50%, -65%);
+				}
+				100% {
+					transform: translate(-50%, -50%);
+				}
+			}
+		}
+	}
+
+	> .right {
+		height: 100%;
+		width: 55%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		padding-left: 5rem;
+
+		> img {
+			height: 70%;
+			object-fit: contain;
+			margin-bottom: 7rem;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.main {
+		flex-direction: column-reverse;	
+		height: 100vh;
+
+		> .left {
+			width: 100%;
+			padding-top: 2rem;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+
+			> h2 {
+				text-align: center;
+				font-size: 14vw;
+				line-height: 100%;
+
+				&:nth-child(2) {
+					font-size: 7vw;
+				}
+			}
+
+			> p {
+				text-align: center;
+				font-size: 5vw;
+				word-wrap: break-word;
+				width: 85%;
+			}
+
+			> .resumeButton {
+				margin-right: 0;
+				margin-top: 2rem;
+				width: 15rem;
+				height: 3rem;
+				font-size: 1rem;
+			}
+
+			> .scrollBelowContainer {
+				width: 8rem;
+				aspect-ratio: 1;
+				margin-top: 2rem;
+				bottom: 0.25rem;
+				left: 100%;
+				transform: translateX(-100%);
+
+				.scrollDownBox {
+					.scrollText {
+						width: 100px;
+
+						@media (max-width: 768px) {
+							width: 80px;
+						}
+					}
+
+					.scrollIcon {
+						width: 20px;
+
+						@media (max-width: 768px) {
+							width: 15px;
+						}
+					}
+				}
+			}
+		}
+
+		> .right {
+			width: 100%;
+			padding-left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-top: 5rem;
+
+			> img {
+				width: 80%;
+				height: auto;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
