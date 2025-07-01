@@ -17,9 +17,8 @@ import node from '../assets/HoverIcons/node.svg';
 import express from '../assets/HoverIcons/express.svg';
 import mongo from '../assets/HoverIcons/mongo.svg';
 import redis from '../assets/HoverIcons/redis.svg';
-import graphql from '../assets/HoverIcons/graphql.svg';
 import docker from '../assets/HoverIcons/docker.svg';
-import kubernetes from '../assets/HoverIcons/kubernetes.svg';
+import typescript from '../assets/HoverIcons/typescript.svg';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -33,69 +32,63 @@ const Technologies = () => {
 		},
 		{
 			id: 2,
+			name: 'TypeScript',
+			url: 'https://www.typescriptlang.org/',
+			image: typescript,
+		},
+		{
+			id: 3,
 			name: 'React.js',
 			url: 'https://reactjs.org/',
 			image: react,
 		},
 		{
-			id: 3,
+			id: 4,
 			name: 'GSAP',
 			url: 'https://greensock.com/gsap/',
 			image: gsapIcon,
 		},
 		{
-			id: 4,
+			id: 5,
 			name: 'Framer Motion',
 			url: 'https://www.framer.com/motion/',
 			image: framer,
 		},
 		{
-			id: 5,
+			id: 6,
 			name: 'Tailwind CSS',
 			url: 'https://tailwindcss.com/',
 			image: tailwind,
 		},
 		{
-			id: 6,
+			id: 7,
 			name: 'Node.js',
 			url: 'https://nodejs.org/',
 			image: node,
 		},
 		{
-			id: 7,
+			id: 8,
 			name: 'Express.js',
 			url: 'https://expressjs.com/',
 			image: express,
 		},
 		{
-			id: 8,
+			id: 9,
 			name: 'MongoDB',
 			url: 'https://www.mongodb.com/',
 			image: mongo,
 		},
 		{
-			id: 9,
+			id: 10,
 			name: 'Redis',
 			url: 'https://redis.io/',
 			image: redis,
-		},
-		{
-			id: 10,
-			name: 'GraphQL',
-			url: 'https://graphql.org/',
-			image: graphql,
 		},
 		{
 			id: 11,
 			name: 'Docker',
 			url: 'https://www.docker.com/',
 			image: docker,
-		},
-		{
-			id: 12,
-			name: 'Kubernetes',
-			url: 'https://kubernetes.io/',
-			image: kubernetes,
 		},
 	]);
 
